@@ -6,7 +6,8 @@
   "author": "Daichi Hashimura <dhashi92@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@prisma/client": "^2.26.0"
+    "@prisma/client": "^2.26.0",
+    "fastify": "^3.18.1"
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
