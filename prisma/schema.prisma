@@ -7,9 +7,22 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// Remove this model when actually starting developing this is just for test
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model Place {
+  id    String  @default(uuid()) @id
+  name  String  @db.VarChar(50)
+  description String @db.VarChar(255)
+  url String? @db.VarChar(255)
+  address String @db.VarChar(255)
+  subaddress String? @db.VarChar(255)
+  mainImage String? @db.VarChar(255)
+  images String[]  @db.VarChar(255)
+  tags Tag[]
+  lat Float
+  lng Float
+}
+
+model Tag {
+  id    String  @default(uuid()) @id
+  name  String  @db.VarChar(50) @unique
+  places Place[]
 }
