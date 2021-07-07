@@ -1,0 +1,14 @@
+{
+  "name": "cc-solo-project-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/daiHash/cc-solo-project-api.git",
+  "author": "Daichi Hashimura <dhashi92@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^2.26.0"
+  },
+  "devDependencies": {
+    "prisma": "^2.26.0"
+  }
+}
