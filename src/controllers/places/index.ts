@@ -44,14 +44,27 @@ export const placeController = {
   },
   // TODO: Implement Pagination
   getPlaces: async (req: FastifyRequest, res: FastifyReply) => {
-    const { limit, search } = <SearchQueries>req.query
+    const { limit, search, tags } = <SearchQueries>req.query
     const take = limit ? Number(limit) : 10
+    const _tags = tags?.split(',') ?? []
 
-    const places = await prisma.place.findMany({
+    let places = await prisma.place.findMany({
       take,
-      where: { name: { contains: search } },
+      where: {
+        name: { contains: search },
+      },
+
       include: { tags: true },
     })
+
+    // TODO: Figure out how to query db instead of filtering
+    if (tags) {
+      places = places.filter((place) => {
+        return place.tags.some((tag) => {
+          return _tags.includes(tag.name)
+        })
+      })
+    }
 
     res.send(places)
   },
