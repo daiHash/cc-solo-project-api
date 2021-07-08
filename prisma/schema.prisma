@@ -16,13 +16,22 @@ model Place {
   subaddress String? @db.VarChar(255)
   mainImage String? @db.VarChar(255)
   images String[]  @db.VarChar(255)
-  tags Tag[]
+  tags Tag[] @relation(references: [id])
   lat Float
   lng Float
+  reviews Review[]
 }
 
 model Tag {
   id    String  @default(uuid()) @id
   name  String  @db.VarChar(50) @unique
-  places Place[]
+  places Place[] @relation(references: [id])
+}
+
+model Review {
+  id    String  @default(uuid()) @id
+  content  String  @db.VarChar(255)
+  author String? @db.VarChar(50)
+  place Place @relation(fields: [placeId], references: [id])
+  placeId String
 }

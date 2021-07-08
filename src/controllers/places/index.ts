@@ -37,7 +37,7 @@ export const placeController = {
       where: {
         id,
       },
-      include: { tags: true },
+      include: { tags: true, reviews: true },
     })
 
     res.send(place)
@@ -54,7 +54,7 @@ export const placeController = {
         name: { contains: search },
       },
 
-      include: { tags: true },
+      include: { tags: true, reviews: true },
     })
 
     // TODO: Figure out how to query db instead of filtering
