@@ -10,7 +10,7 @@ generator client {
 model Place {
   id    String  @default(uuid()) @id
   name  String  @db.VarChar(50)
-  description String @db.VarChar(255)
+  description String @db.Text()
   url String? @db.VarChar(255)
   address String @db.VarChar(255)
   subaddress String? @db.VarChar(255)
