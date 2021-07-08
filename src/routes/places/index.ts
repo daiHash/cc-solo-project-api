@@ -1,6 +1,7 @@
 import { FastifyInstance } from 'fastify'
 import { placeController } from '../../controllers/places'
 import { Place } from '../../types/places'
+import { SearchQueries } from '../../types/places/routes'
 
 export const placesRoutes = async (fastify: FastifyInstance) => {
   fastify.post<{
@@ -10,4 +11,6 @@ export const placesRoutes = async (fastify: FastifyInstance) => {
   fastify.get<{
     Params: { id: string }
   }>('/:id', placeController.getPlaceById)
+
+  fastify.get<{ Querystring: SearchQueries }>('/', placeController.getPlaces)
 }
