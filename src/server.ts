@@ -1,10 +1,11 @@
 import fastify from 'fastify'
-import { placesRoutes } from './routes/places'
+import { placeRoutes, placesRoutes } from './routes/places'
 import { reviewsRoutes } from './routes/reviews'
 
 const app = fastify({ logger: true })
 
-app.register(placesRoutes, { prefix: '/api/v1/place' })
+app.register(placeRoutes, { prefix: '/api/v1/place' })
+app.register(placesRoutes, { prefix: '/api/v1/places' })
 app.register(reviewsRoutes, { prefix: '/api/v1/place/review' })
 
 app.listen(3000, (err) => {
