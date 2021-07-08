@@ -18,4 +18,9 @@ export const placesRoutes = async (fastify: FastifyInstance) => {
     '/:id',
     placeController.updatePlace
   )
+
+  fastify.delete<{ Params: { id: string } }>(
+    '/:id',
+    placeController.deletePlace
+  )
 }

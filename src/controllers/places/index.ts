@@ -84,4 +84,15 @@ export const placeController = {
 
     res.send(updatedPlace)
   },
+  deletePlace: async (req: FastifyRequest, res: FastifyReply) => {
+    const { id } = <{ id: string }>req.params
+
+    const place = await prisma.place.delete({
+      where: {
+        id,
+      },
+    })
+
+    res.send(place)
+  },
 }
