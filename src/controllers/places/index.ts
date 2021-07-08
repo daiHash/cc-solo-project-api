@@ -55,4 +55,33 @@ export const placeController = {
 
     res.send(places)
   },
+  updatePlace: async (req: FastifyRequest, res: FastifyReply) => {
+    const { id } = <{ id: string }>req.params
+    const data = <Partial<Place>>req.body
+    const tags = data.tags?.map((tag) => ({ name: tag })) ?? []
+
+    const updatedPlace = await prisma.place.update({
+      where: {
+        id,
+      },
+      data: {
+        ...data,
+        tags: {
+          connectOrCreate: tags.map((tag) => {
+            return {
+              where: {
+                name: tag.name,
+              },
+              create: {
+                name: tag.name,
+              },
+            }
+          }),
+        },
+      },
+      include: { tags: true },
+    })
+
+    res.send(updatedPlace)
+  },
 }

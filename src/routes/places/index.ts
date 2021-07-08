@@ -13,4 +13,9 @@ export const placesRoutes = async (fastify: FastifyInstance) => {
   }>('/:id', placeController.getPlaceById)
 
   fastify.get<{ Querystring: SearchQueries }>('/', placeController.getPlaces)
+
+  fastify.put<{ Params: { id: string }; Body: Partial<Place> }>(
+    '/:id',
+    placeController.updatePlace
+  )
 }
