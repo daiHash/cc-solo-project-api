@@ -1,20 +1,9 @@
-import { PrismaClient } from '@prisma/client'
 import fastify from 'fastify'
+import { placesRoutes } from './routes/places'
 
-const prisma = new PrismaClient()
-const app = fastify()
+const app = fastify({ logger: true })
 
-app.get<{
-  Params: IPostByIdParam
-}>('/:id', async (req, res) => {
-  const { id } = req.params
-
-  res.send({ id, hello: 'hello' })
-})
-
-interface IPostByIdParam {
-  id: number
-}
+app.register(placesRoutes, { prefix: '/api/v1/place' })
 
 app.listen(3000, (err) => {
   if (err) {
