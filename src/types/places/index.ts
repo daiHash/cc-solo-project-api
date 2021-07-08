@@ -14,4 +14,5 @@ export type Place = {
 export type Review = {
   content: string
   author?: string
+  rating?: number
 }

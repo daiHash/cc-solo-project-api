@@ -15,4 +15,13 @@ export const reviewsController = {
 
     res.send(review)
   },
+  getReviewsByPlaceId: async (req: FastifyRequest, res: FastifyReply) => {
+    const { placeId } = <{ placeId: string }>req.params
+
+    const review = await prisma.review.findMany({
+      where: { placeId },
+    })
+
+    res.send(review)
+  },
 }
