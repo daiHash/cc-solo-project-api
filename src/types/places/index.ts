@@ -10,3 +10,8 @@ export type Place = {
   lat: number
   lng: number
 }
+
+export type Review = {
+  content: string
+  author?: string
+}
