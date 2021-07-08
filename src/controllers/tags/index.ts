@@ -8,4 +8,13 @@ export const tagsController = {
 
     res.send(tags)
   },
+  deleteTag: async (req: FastifyRequest, res: FastifyReply) => {
+    const { id } = <{ id: string }>req.params
+
+    const tag = await prisma.tag.delete({
+      where: { id },
+    })
+
+    res.send(tag)
+  },
 }

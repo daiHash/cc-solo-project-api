@@ -24,4 +24,13 @@ export const reviewsController = {
 
     res.send(review)
   },
+  deleteReview: async (req: FastifyRequest, res: FastifyReply) => {
+    const { id } = <{ id: string }>req.params
+
+    const review = await prisma.review.delete({
+      where: { id },
+    })
+
+    res.send(review)
+  },
 }

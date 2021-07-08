@@ -7,6 +7,10 @@ export const reviewRoutes = async (fastify: FastifyInstance) => {
     Body: Review
     Params: { placeId: string }
   }>('/:placeId', reviewsController.createPlaceReview)
+
+  fastify.delete<{
+    Params: { id: string }
+  }>('/:id', reviewsController.deleteReview)
 }
 
 export const reviewsRoutes = async (fastify: FastifyInstance) => {

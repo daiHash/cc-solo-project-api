@@ -7,9 +7,9 @@ const app = fastify({ logger: true })
 
 app.register(tagsRoutes, { prefix: '/api/v1/tags' })
 app.register(placeRoutes, { prefix: '/api/v1/place' })
-app.register(placesRoutes, { prefix: '/api/v1/places' })
 app.register(reviewRoutes, { prefix: '/api/v1/place/review' })
 app.register(reviewsRoutes, { prefix: '/api/v1/place/reviews' })
+app.register(placesRoutes, { prefix: '/api/v1/places' })
 
 app.listen(3000, (err) => {
   if (err) {
