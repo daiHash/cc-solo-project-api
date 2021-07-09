@@ -1,4 +1,5 @@
 # API reference
+[Published API Documentation](https://documenter.getpostman.com/view/3992616/Tzm6jv1Y)
 
 > ## [Places endpoints](./places.md)
 
