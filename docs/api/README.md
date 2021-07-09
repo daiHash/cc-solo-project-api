@@ -1,7 +1,7 @@
 # API reference
 [Published API Documentation](https://documenter.getpostman.com/view/3992616/Tzm6jv1Y)
 
-> ## [Places endpoints](./places.md)
+> ## 🏠 [Places endpoints](./places.md)
 
 |                                                               | Method | Endpoint            |
 | ------------------------------------------------------------- | ------ | ------------------- |
@@ -17,7 +17,7 @@
 
 &nbsp;
 
-> ## [Tags endpoints](./tags.md)
+> ## 🏷 [Tags endpoints](./tags.md)
 
 |                                                            | Method | Endpoint           |
 | ---------------------------------------------------------- | ------ | ------------------ |
@@ -30,7 +30,7 @@
 
 &nbsp;
 
-> ## [Reviews endpoints](./reviews.md)
+> ## 📝 [Reviews endpoints](./reviews.md)
 
 |                                                                               | Method | Endpoint                   |
 | ----------------------------------------------------------------------------- | ------ | -------------------------- |
