@@ -1,4 +1,4 @@
-# Places API Endpoints
+# 🏠 Places API Endpoints
 
 CRUD operations to handle the places data
 
