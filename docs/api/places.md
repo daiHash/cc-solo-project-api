@@ -201,7 +201,11 @@ Return message below
 }
 ```
 
+&nbsp;
+
 ---
+
+&nbsp;
 
 # Places - `/api/v1/places`
 
