@@ -3,12 +3,12 @@
 CRUD operations to handle the places data
 
 |       | Method | Endpoint |
-| --- | --- | --- |
+| ------- | ------- | ------- |
 | [Create New Place](#post---create-new-place) | POST | `/api/v1/place` |
-| Data | Data | Data |
-| Data | Data | Data |
-| Data | Data | Data |
-| Data | Data | Data |
+| [Get Place By ID](#get---place-by-id) | GET | `/api/v1/place/:id` |
+| [Update Place By ID](#put---update-place-by-id) | PUT | `/api/v1/place/:id` |
+| [Delete Place By ID](#delete---delete-place-by-id) | DELETE | `/api/v1/place/:id` |
+| [Get Places](#get---get-places) | GET | `/api/v1/places` |
 
 # Place `/api/v1/place`
 
