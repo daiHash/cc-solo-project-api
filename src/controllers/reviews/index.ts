@@ -31,6 +31,8 @@ export const reviewsController = {
       where: { id },
     })
 
-    res.send(review)
+    res.send({
+      message: `Place review with id:${review.id} was deleted successfully`,
+    })
   },
 }

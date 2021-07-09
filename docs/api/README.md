@@ -28,3 +28,11 @@
 ---
 
 &nbsp;
+
+> ## [Reviews endpoints](./reviews.md)
+
+|                                                                               | Method | Endpoint                   |
+| ----------------------------------------------------------------------------- | ------ | -------------------------- |
+| [Create New Place Review](./reviews.md#post---create-new-place-review)        | POST   | `/api/v1/review/:id`       |
+| [Delete Place Review By ID](./reviews.md#delete---delete-place-review-by-id)  | DELETE | `/api/v1/review/:id`       |
+| [Get All Reviews By Place ID](./reviews.md#get---get-all-reviews-by-place-id) | GET    | `/api/v1/reviews/:placeId` |
