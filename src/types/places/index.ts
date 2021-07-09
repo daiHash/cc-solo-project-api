@@ -12,7 +12,7 @@ export type Place = {
 }
 
 export type Review = {
-  content: string
+  comment: string
   author?: string
   rating?: number
 }
