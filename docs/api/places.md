@@ -35,7 +35,8 @@ http://localhost:3000/api/v1/place
   "images": [],
   "tags": ["cafe", "neko"],
   "lat": 1.2132323121232,
-  "lng": 2.1231323212312
+  "lng": 2.1231323212312,
+  "reviews": []
 }
 ```
 
@@ -54,7 +55,8 @@ Return the newly added Place
   "images": [],
   "tags": ["cafe", "neko"],
   "lat": 1.2132323121232,
-  "lng": 2.1231323212312
+  "lng": 2.1231323212312,
+  "reviews": []
 }
 ```
 
