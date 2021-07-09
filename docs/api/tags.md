@@ -11,7 +11,7 @@ CRUD operations to handle the places tags data
 
 # Tags `/api/v1/tags`
 
-Endpoints to handle single place
+Endpoints to handle places tags
 
 > ## `GET` - Get All Places Tags
 

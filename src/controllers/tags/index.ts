@@ -15,6 +15,6 @@ export const tagsController = {
       where: { id },
     })
 
-    res.send(tag)
+    res.send({ message: `Tag with id:${tag.id} was deleted successfully` })
   },
 }
