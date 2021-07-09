@@ -25,7 +25,7 @@ export const placeController = {
           }),
         },
       },
-      include: { tags: true },
+      include: { tags: true, reviews: true },
     })
 
     res.send(place)
@@ -92,7 +92,7 @@ export const placeController = {
           }),
         },
       },
-      include: { tags: true },
+      include: { tags: true, reviews: true },
     })
 
     res.send(updatedPlace)
@@ -106,6 +106,6 @@ export const placeController = {
       },
     })
 
-    res.send(place)
+    res.send({ message: `Place with id:${place.id} was deleted successfully` })
   },
 }
