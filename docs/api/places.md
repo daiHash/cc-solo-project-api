@@ -4,7 +4,7 @@ CRUD operations to handle the places data
 
 |       | Method | Endpoint |
 | --- | --- | --- |
-| [Create New Place](#post-create-new-place) | POST | `/api/v1/place` |
+| [Create New Place](#post---create-new-place) | POST | `/api/v1/place` |
 | Data | Data | Data |
 | Data | Data | Data |
 | Data | Data | Data |
