@@ -87,7 +87,7 @@ Return message below
 
 # Reviews - `/api/v1/reviews`
 
-Endpoints to get places
+Endpoints to get all review of the given place id
 
 > ## `GET` - Get All Reviews By Place ID
 
