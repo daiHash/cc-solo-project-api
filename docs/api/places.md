@@ -2,13 +2,15 @@
 
 CRUD operations to handle the places data
 
-|       | Method | Endpoint |
-| ------- | ------- | ------- |
-| [Create New Place](#post---create-new-place) | POST | `/api/v1/place` |
-| [Get Place By ID](#get---place-by-id) | GET | `/api/v1/place/:id` |
-| [Update Place By ID](#put---update-place-by-id) | PUT | `/api/v1/place/:id` |
+|                                                    | Method | Endpoint            |
+| -------------------------------------------------- | ------ | ------------------- |
+| [Create New Place](#post---create-new-place)       | POST   | `/api/v1/place`     |
+| [Get Place By ID](#get---place-by-id)              | GET    | `/api/v1/place/:id` |
+| [Update Place By ID](#put---update-place-by-id)    | PUT    | `/api/v1/place/:id` |
 | [Delete Place By ID](#delete---delete-place-by-id) | DELETE | `/api/v1/place/:id` |
-| [Get Places](#get---get-places) | GET | `/api/v1/places` |
+| [Get Places](#get---get-places)                    | GET    | `/api/v1/places`    |
+
+&nbsp;
 
 # Place `/api/v1/place`
 
@@ -56,7 +58,11 @@ Return the newly added Place
 }
 ```
 
+&nbsp;
+
 ---
+
+&nbsp;
 
 > ## `GET` - Place By ID
 
@@ -103,7 +109,11 @@ Return the Place by the given id
 }
 ```
 
+&nbsp;
+
 ---
+
+&nbsp;
 
 > ## `PUT` - Update Place By ID
 
@@ -169,7 +179,11 @@ Return the updated Place
 }
 ```
 
+&nbsp;
+
 ---
+
+&nbsp;
 
 > ## `DELETE` - Delete Place By ID
 
@@ -193,7 +207,11 @@ Return message below
 
 Endpoints to get places
 
+&nbsp;
+
 ---
+
+&nbsp;
 
 > ## `GET` - Get Places
 
