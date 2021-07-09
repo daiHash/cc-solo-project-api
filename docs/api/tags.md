@@ -1,4 +1,4 @@
-# Tags API Endpoints
+# 🏷 Tags API Endpoints
 
 CRUD operations to handle the places tags data
 
