@@ -2,7 +2,15 @@
 
 CRUD operations to handle the places data
 
-# Place - `/api/v1/place`
+|       | Method | Endpoint |
+| --- | --- | --- |
+| [Create New Place](#post-create-new-place) | POST | `/api/v1/place` |
+| Data | Data | Data |
+| Data | Data | Data |
+| Data | Data | Data |
+| Data | Data | Data |
+
+# Place `/api/v1/place`
 
 Endpoints to handle single place
 
