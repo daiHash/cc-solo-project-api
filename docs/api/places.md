@@ -207,11 +207,6 @@ Return message below
 
 Endpoints to get places
 
-&nbsp;
-
----
-
-&nbsp;
 
 > ## `GET` - Get Places
 
