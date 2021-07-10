@@ -1,25 +1,25 @@
-# 🏠 Places API Endpoints
+# 🏠 Boxs API Endpoints
 
-CRUD operations to handle the places data
+CRUD operations to handle the boxes data
 
-|                                                    | Method | Endpoint            |
-| -------------------------------------------------- | ------ | ------------------- |
-| [Create New Place](#post---create-new-place)       | POST   | `/api/v1/place`     |
-| [Get Place By ID](#get---place-by-id)              | GET    | `/api/v1/place/:id` |
-| [Update Place By ID](#put---update-place-by-id)    | PUT    | `/api/v1/place/:id` |
-| [Delete Place By ID](#delete---delete-place-by-id) | DELETE | `/api/v1/place/:id` |
-| [Get Places](#get---get-places)                    | GET    | `/api/v1/places`    |
+|                                                | Method | Endpoint          |
+| ---------------------------------------------- | ------ | ----------------- |
+| [Create New Box](#post---create-new-box)       | POST   | `/api/v1/box`     |
+| [Get Box By ID](#get---box-by-id)              | GET    | `/api/v1/box/:id` |
+| [Update Box By ID](#put---update-box-by-id)    | PUT    | `/api/v1/box/:id` |
+| [Delete Box By ID](#delete---delete-box-by-id) | DELETE | `/api/v1/box/:id` |
+| [Get Boxs](#get---get-boxes)                   | GET    | `/api/v1/boxes`   |
 
 &nbsp;
 
-# Place `/api/v1/place`
+# Box `/api/v1/box`
 
-Endpoints to handle single place
+Endpoints to handle single box
 
-> ## `POST` - Create New Place
+> ## `POST` - Create New Box
 
 ```
-http://localhost:3000/api/v1/place
+http://localhost:3000/api/v1/box
 ```
 
 > ### Request Body
@@ -29,20 +29,19 @@ http://localhost:3000/api/v1/place
   "name": "test",
   "description": "test test test",
   "address": "some test address",
-  "subaddress": "some test subaddress",
-  "url": "https://places.com",
+  "url": "https://boxes.com",
   "mainImage": "https://cdn.forimage.com",
   "images": [],
   "tags": ["cafe", "neko"],
   "lat": 1.2132323121232,
   "lng": 2.1231323212312,
-  "reviews": []
+  "dropInFee": 3000
 }
 ```
 
 > ### Response
 
-Return the newly added Place
+Return the newly added Box
 
 ```json
 {
@@ -50,7 +49,7 @@ Return the newly added Place
   "description": "test test test",
   "address": "some test address",
   "subaddress": "some test subaddress",
-  "url": "https://places.com",
+  "url": "https://boxes.com",
   "mainImage": "https://cdn.forimage.com",
   "images": [],
   "tags": ["cafe", "neko"],
@@ -66,15 +65,15 @@ Return the newly added Place
 
 &nbsp;
 
-> ## `GET` - Place By ID
+> ## `GET` - Box By ID
 
 ```
-http://localhost:3000/api/v1/place/:add-the-place-id
+http://localhost:3000/api/v1/box/:add-the-box-id
 ```
 
 > ### Response
 
-Return the Place by the given id
+Return the Box by the given id
 
 ```json
 {
@@ -101,10 +100,10 @@ Return the Place by the given id
   "reviews": [
     {
       "id": "b7700ad0-653b-4f27-bd4e-a6f40d560419",
-      "comment": "This place is amazing!💩",
+      "comment": "This box is amazing!💩",
       "author": "Pickleman2",
       "createdAt": "2021-07-09T13:08:17.679Z",
-      "placeId": "bcd2c563-8df7-4e33-a492-b4fb267d7e38",
+      "boxId": "bcd2c563-8df7-4e33-a492-b4fb267d7e38",
       "rating": 4.5
     }
   ]
@@ -117,10 +116,10 @@ Return the Place by the given id
 
 &nbsp;
 
-> ## `PUT` - Update Place By ID
+> ## `PUT` - Update Box By ID
 
 ```
-http://localhost:3000/api/v1/place/:add-the-place-id
+http://localhost:3000/api/v1/box/:add-the-box-id
 ```
 
 > ### Request Body
@@ -133,7 +132,7 @@ You can send only the data you want to update
   "description": "test test test",
   "address": "some test address",
   "subaddress": "some test subaddress",
-  "url": "https://places.com",
+  "url": "https://boxes.com",
   "mainImage": "https://cdn.forimage.com",
   "images": [],
   "tags": ["cafe", "neko"],
@@ -144,7 +143,7 @@ You can send only the data you want to update
 
 > ### Response
 
-Return the updated Place
+Return the updated Box
 
 ```json
 {
@@ -171,10 +170,10 @@ Return the updated Place
   "reviews": [
     {
       "id": "b7700ad0-653b-4f27-bd4e-a6f40d560419",
-      "comment": "This place is amazing!💩",
+      "comment": "This box is amazing!💩",
       "author": "Pickleman2",
       "createdAt": "2021-07-09T13:08:17.679Z",
-      "placeId": "bcd2c563-8df7-4e33-a492-b4fb267d7e38",
+      "boxId": "bcd2c563-8df7-4e33-a492-b4fb267d7e38",
       "rating": 4.5
     }
   ]
@@ -187,10 +186,10 @@ Return the updated Place
 
 &nbsp;
 
-> ## `DELETE` - Delete Place By ID
+> ## `DELETE` - Delete Box By ID
 
 ```
-http://localhost:3000/api/v1/place/:add-the-place-id
+http://localhost:3000/api/v1/box/:add-the-box-id
 ```
 
 > ### Response
@@ -199,7 +198,7 @@ Return message below
 
 ```json
 {
-  "message": "Place with id: {place.id} was deleted successfully"
+  "message": "Box with id: {box.id} was deleted successfully"
 }
 ```
 
@@ -209,28 +208,27 @@ Return message below
 
 &nbsp;
 
-# Places - `/api/v1/places`
+# Boxs - `/api/v1/boxes`
 
-Endpoints to get places
+Endpoints to get boxes
 
-
-> ## `GET` - Get Places
+> ## `GET` - Get Boxs
 
 ```
-http://localhost:3000/api/v1/places/
+http://localhost:3000/api/v1/boxes/
 ```
 
 ### Queries
 
 ```
-limit: limit of places you want to get. If it's not passed default is 10 places
-search: String to search through places name
+limit: limit of boxes you want to get. If it's not passed default is 10 boxes
+search: String to search through boxes name
 tags: Filter with tags
 ```
 
 > ### Response
 
-Return an array of places by the specified queries if passed
+Return an array of boxes by the specified queries if passed
 
 ```json
 [
@@ -262,10 +260,10 @@ Return an array of places by the specified queries if passed
     "reviews": [
       {
         "id": "b7700ad0-653b-4f27-bd4e-a6f40d560419",
-        "comment": "This place is amazing!💩",
+        "comment": "This box is amazing!💩",
         "author": "Pickleman2",
         "createdAt": "2021-07-09T13:08:17.679Z",
-        "placeId": "bcd2c563-8df7-4e33-a492-b4fb267d7e38",
+        "boxId": "bcd2c563-8df7-4e33-a492-b4fb267d7e38",
         "rating": 4.5
       }
     ]

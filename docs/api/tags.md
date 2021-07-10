@@ -1,19 +1,19 @@
 # 🏷 Tags API Endpoints
 
-CRUD operations to handle the places tags data
+CRUD operations to handle the boxes tags data
 
-|                                                   | Method | Endpoint           |
-| ------------------------------------------------- | ------ | ------------------ |
-| [Get All Places Tags](#get---get-all-places-tags) | GET    | `/api/v1/tags`     |
-| [Get Place By ID](#delete---delete-tag-by-id)     | DELETE | `/api/v1/tags/:id` |
+|                                                 | Method | Endpoint           |
+| ----------------------------------------------- | ------ | ------------------ |
+| [Get All Boxes Tags](#get---get-all-boxes-tags) | GET    | `/api/v1/tags`     |
+| [Get Place By ID](#delete---delete-tag-by-id)   | DELETE | `/api/v1/tags/:id` |
 
 &nbsp;
 
 # Tags `/api/v1/tags`
 
-Endpoints to handle places tags
+Endpoints to handle boxes tags
 
-> ## `GET` - Get All Places Tags
+> ## `GET` - Get All Boxes Tags
 
 ```
 http://localhost:3000/api/v1/tags

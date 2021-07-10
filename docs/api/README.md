@@ -1,15 +1,16 @@
 # API reference
+
 [Published API Documentation](https://documenter.getpostman.com/view/3992616/Tzm6jv1Y)
 
-> ## 🏠 [Places endpoints](./places.md)
+> ## 🏠 [Boxes endpoints](./boxes.md)
 
-|                                                               | Method | Endpoint            |
-| ------------------------------------------------------------- | ------ | ------------------- |
-| [Create New Place](./places.md#post---create-new-place)       | POST   | `/api/v1/place`     |
-| [Get Place By ID](./places.md#get---place-by-id)              | GET    | `/api/v1/place/:id` |
-| [Update Place By ID](./places.md#put---update-place-by-id)    | PUT    | `/api/v1/place/:id` |
-| [Delete Place By ID](./places.md#delete---delete-place-by-id) | DELETE | `/api/v1/place/:id` |
-| [Get Places](./places.md#get---get-places)                    | GET    | `/api/v1/places`    |
+|                                                          | Method | Endpoint          |
+| -------------------------------------------------------- | ------ | ----------------- |
+| [Create New Box](./boxes.md#post---create-new-box)       | POST   | `/api/v1/box`     |
+| [Get Box By ID](./boxes.md#get---box-by-id)              | GET    | `/api/v1/box/:id` |
+| [Update Box By ID](./boxes.md#put---update-box-by-id)    | PUT    | `/api/v1/box/:id` |
+| [Delete Box By ID](./boxes.md#delete---delete-box-by-id) | DELETE | `/api/v1/box/:id` |
+| [Get Boxes](./boxes.md#get---get-boxes)                  | GET    | `/api/v1/boxes`   |
 
 &nbsp;
 
@@ -19,10 +20,10 @@
 
 > ## 🏷 [Tags endpoints](./tags.md)
 
-|                                                            | Method | Endpoint           |
-| ---------------------------------------------------------- | ------ | ------------------ |
-| [Get All Places Tags](./tags.md#get---get-all-places-tags) | GET    | `/api/v1/tags`     |
-| [Get Place By ID](./tags.md#delete---delete-tag-by-id)     | DELETE | `/api/v1/tags/:id` |
+|                                                          | Method | Endpoint           |
+| -------------------------------------------------------- | ------ | ------------------ |
+| [Get All Boxes Tags](./tags.md#get---get-all-boxes-tags) | GET    | `/api/v1/tags`     |
+| [Get Box By ID](./tags.md#delete---delete-tag-by-id)     | DELETE | `/api/v1/tags/:id` |
 
 &nbsp;
 
@@ -32,8 +33,8 @@
 
 > ## 📝 [Reviews endpoints](./reviews.md)
 
-|                                                                               | Method | Endpoint                   |
-| ----------------------------------------------------------------------------- | ------ | -------------------------- |
-| [Create New Place Review](./reviews.md#post---create-new-place-review)        | POST   | `/api/v1/review/:id`       |
-| [Delete Place Review By ID](./reviews.md#delete---delete-place-review-by-id)  | DELETE | `/api/v1/review/:id`       |
-| [Get All Reviews By Place ID](./reviews.md#get---get-all-reviews-by-place-id) | GET    | `/api/v1/reviews/:placeId` |
+|                                                                           | Method | Endpoint                 |
+| ------------------------------------------------------------------------- | ------ | ------------------------ |
+| [Create New Box Review](./reviews.md#post---create-new-box-review)        | POST   | `/api/v1/review/:id`     |
+| [Delete Box Review By ID](./reviews.md#delete---delete-box-review-by-id)  | DELETE | `/api/v1/review/:id`     |
+| [Get All Reviews By Box ID](./reviews.md#get---get-all-reviews-by-box-id) | GET    | `/api/v1/reviews/:boxId` |
