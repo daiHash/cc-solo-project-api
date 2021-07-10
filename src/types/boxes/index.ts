@@ -1,14 +1,14 @@
-export type Place = {
+export type Box = {
   name: string
   description: string
-  url: string | null
+  website: string | null
   address: string
-  subaddress: string | null
   mainImage: string
   images: string[]
   tags: string[]
   lat: number
   lng: number
+  dropInFee: number
 }
 
 export type Review = {

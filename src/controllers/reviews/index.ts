@@ -1,25 +1,25 @@
 import { PrismaClient } from '@prisma/client'
 import { FastifyReply, FastifyRequest } from 'fastify'
-import { Review } from '../../types/places'
+import { Review } from '../../types/boxes'
 const prisma = new PrismaClient()
 
 export const reviewsController = {
   createPlaceReview: async (req: FastifyRequest, res: FastifyReply) => {
     const data = <Review>req.body
-    const { placeId } = <{ placeId: string }>req.params
+    const { boxId } = <{ boxId: string }>req.params
 
     const review = await prisma.review.create({
-      data: { ...data, place: { connect: { id: placeId } } },
-      include: { place: true },
+      data: { ...data, box: { connect: { id: boxId } } },
+      include: { box: true },
     })
 
     res.send(review)
   },
   getReviewsByPlaceId: async (req: FastifyRequest, res: FastifyReply) => {
-    const { placeId } = <{ placeId: string }>req.params
+    const { boxId } = <{ boxId: string }>req.params
 
     const review = await prisma.review.findMany({
-      where: { placeId },
+      where: { boxId },
     })
 
     res.send(review)

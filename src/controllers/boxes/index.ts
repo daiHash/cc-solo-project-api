@@ -1,15 +1,15 @@
 import { PrismaClient } from '@prisma/client'
 import { FastifyReply, FastifyRequest } from 'fastify'
-import { Place } from '../../types/places'
-import { SearchQueries } from '../../types/places/routes'
+import { Box } from '../../types/boxes'
+import { SearchQueries } from '../../types/boxes/routes'
 const prisma = new PrismaClient()
 
-export const placeController = {
-  createPlace: async (req: FastifyRequest, res: FastifyReply) => {
-    const data = <Place>req.body
+export const boxController = {
+  createBox: async (req: FastifyRequest, res: FastifyReply) => {
+    const data = <Box>req.body
     const tags = data.tags.map((tag) => ({ name: tag }))
 
-    const place = await prisma.place.create({
+    const box = await prisma.box.create({
       data: {
         ...data,
         tags: {
@@ -25,55 +25,55 @@ export const placeController = {
           }),
         },
       },
-      include: { tags: true, reviews: true },
+      include: { tags: true, reviews: true, membershipPlans: true },
     })
 
-    res.send(place)
+    res.send(box)
   },
-  getPlaceById: async (req: FastifyRequest, res: FastifyReply) => {
+  getBoxById: async (req: FastifyRequest, res: FastifyReply) => {
     const { id } = <{ id: string }>req.params
 
-    const place = await prisma.place.findUnique({
+    const box = await prisma.box.findUnique({
       where: {
         id,
       },
-      include: { tags: true, reviews: true },
+      include: { tags: true, reviews: true, membershipPlans: true },
     })
 
-    res.send(place)
+    res.send(box)
   },
   // TODO: Implement Pagination
-  getPlaces: async (req: FastifyRequest, res: FastifyReply) => {
+  getBoxs: async (req: FastifyRequest, res: FastifyReply) => {
     const { limit, search, tags } = <SearchQueries>req.query
     const take = limit ? Number(limit) : 10
     const _tags = tags?.split(',') ?? []
 
-    let places = await prisma.place.findMany({
+    let boxes = await prisma.box.findMany({
       take,
       where: {
         name: { contains: search },
       },
 
-      include: { tags: true, reviews: true },
+      include: { tags: true, reviews: true, membershipPlans: true },
     })
 
     // TODO: Figure out how to query db instead of filtering
     if (tags) {
-      places = places.filter((place) => {
-        return place.tags.some((tag) => {
+      boxes = boxes.filter((box) => {
+        return box.tags.some((tag) => {
           return _tags.includes(tag.name)
         })
       })
     }
 
-    res.send(places)
+    res.send(boxes)
   },
-  updatePlace: async (req: FastifyRequest, res: FastifyReply) => {
+  updateBox: async (req: FastifyRequest, res: FastifyReply) => {
     const { id } = <{ id: string }>req.params
-    const data = <Partial<Place>>req.body
+    const data = <Partial<Box>>req.body
     const tags = data.tags?.map((tag) => ({ name: tag })) ?? []
 
-    const updatedPlace = await prisma.place.update({
+    const updatedBox = await prisma.box.update({
       where: {
         id,
       },
@@ -92,20 +92,20 @@ export const placeController = {
           }),
         },
       },
-      include: { tags: true, reviews: true },
+      include: { tags: true, reviews: true, membershipPlans: true },
     })
 
-    res.send(updatedPlace)
+    res.send(updatedBox)
   },
-  deletePlace: async (req: FastifyRequest, res: FastifyReply) => {
+  deleteBox: async (req: FastifyRequest, res: FastifyReply) => {
     const { id } = <{ id: string }>req.params
 
-    const place = await prisma.place.delete({
+    const box = await prisma.box.delete({
       where: {
         id,
       },
     })
 
-    res.send({ message: `Place with id:${place.id} was deleted successfully` })
+    res.send({ message: `Box with id:${box.id} was deleted successfully` })
   },
 }

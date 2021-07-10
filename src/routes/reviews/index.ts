@@ -1,12 +1,12 @@
 import { FastifyInstance } from 'fastify'
 import { reviewsController } from '../../controllers/reviews'
-import { Review } from '../../types/places'
+import { Review } from '../../types/boxes'
 
 export const reviewRoutes = async (fastify: FastifyInstance) => {
   fastify.post<{
     Body: Review
-    Params: { placeId: string }
-  }>('/:placeId', reviewsController.createPlaceReview)
+    Params: { boxId: string }
+  }>('/:boxId', reviewsController.createPlaceReview)
 
   fastify.delete<{
     Params: { id: string }
@@ -15,6 +15,6 @@ export const reviewRoutes = async (fastify: FastifyInstance) => {
 
 export const reviewsRoutes = async (fastify: FastifyInstance) => {
   fastify.get<{
-    Params: { placeId: string }
-  }>('/:placeId', reviewsController.getReviewsByPlaceId)
+    Params: { boxId: string }
+  }>('/:boxId', reviewsController.getReviewsByPlaceId)
 }
